@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class CashRegister extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'branch_id',
+        'user_id',
+        'opened_at',
+        'closed_at',
+        'opening_amount',
+        'expected_amount',
+        'actual_amount',
+        'variance',
+        'closing_notes',
+        'status',
+    ];
+
+    protected $casts = [
+        'opened_at' => 'datetime',
+        'closed_at' => 'datetime',
+    ];
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function movements()
+    {
+        return $this->hasMany(CashRegisterMovement::class);
+    }
+}
