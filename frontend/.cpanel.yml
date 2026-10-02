@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export FRONTEND_PATH=/home/electrop/public_html/pos.electropointlugbeabuja.com
+    - export BACKEND_PATH=/home/electrop/electropoint_backend
+    - /bin/cp -R frontend/dist/* $FRONTEND_PATH/
+    - /bin/cp -R backend/* $BACKEND_PATH/
