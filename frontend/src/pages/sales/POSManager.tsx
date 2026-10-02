@@ -143,7 +143,7 @@ export default function POSManager() {
     <div className="h-[calc(100vh-64px)] flex bg-gray-50 overflow-hidden font-sans">
       
       {/* LEFT: Products Pane (70%) */}
-      <div className="w-[70%] flex flex-col border-r border-gray-200 bg-white print:hidden">
+      <div className="w-[70%] flex flex-col border-r border-gray-200 bg-white no-print">
         {/* Search Bar Header */}
         <div className="p-4 border-b border-gray-100 flex gap-4 items-center bg-white shrink-0">
           <div className="relative flex-1 max-w-2xl">
@@ -199,7 +199,7 @@ export default function POSManager() {
       </div>
 
       {/* RIGHT: Cart & Checkout Pane (30%) - DARK MODE */}
-      <div className="w-[30%] flex flex-col bg-gray-900 text-gray-100 shadow-2xl z-10 relative print:hidden">
+      <div className="w-[30%] flex flex-col bg-gray-900 text-gray-100 shadow-2xl z-10 relative no-print">
         
         {/* Customer Selector */}
         <div className="p-4 border-b border-gray-800 bg-black shrink-0">
