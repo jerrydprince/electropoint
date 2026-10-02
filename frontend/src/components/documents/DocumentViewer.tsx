@@ -100,7 +100,7 @@ export default function DocumentViewer({ sale, autoPrint = false }: Props) {
               {sale.items?.map((item: any) => (
                 <div key={item.id} className="mb-2">
                   <div className="flex justify-between">
-                    <span className="w-1/2 pr-1 truncate">{item.product?.name}{item.product?.description ? ` - ${item.product.description}` : ''}</span>
+                    <span className="w-1/2 pr-1 truncate">{item.product?.name}</span>
                     <span className="w-1/4 text-center">{item.quantity}</span>
                     <span className="w-1/4 text-right">{parseFloat(item.total).toLocaleString()}</span>
                   </div>
@@ -230,7 +230,7 @@ export default function DocumentViewer({ sale, autoPrint = false }: Props) {
                 {sale.items?.map((item: any) => (
                   <tr key={item.id}>
                     <td className="py-4">
-                      <div className="font-bold text-gray-900">{item.product?.name}{item.product?.description ? ` - ${item.product.description}` : ''}</div>
+                      <div className="font-bold text-gray-900">{item.product?.name}</div>
                       {item.product?.sku && <div className="text-xs text-gray-500 font-mono mt-0.5">SKU: {item.product.sku}</div>}
                       {item.serials && item.serials.length > 0 && (
                         <div className="text-xs text-gray-600 mt-1 bg-gray-50 inline-block px-2 py-1 rounded">SN: {item.serials.join(', ')}</div>

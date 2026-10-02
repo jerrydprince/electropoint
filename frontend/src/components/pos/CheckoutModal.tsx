@@ -153,7 +153,7 @@ export default function CheckoutModal({ isOpen, onClose, cart, customer, subtota
             {cart.map(item => (
               <div key={item.id} className="flex justify-between text-sm mb-3">
                 <div className="flex-1">
-                  <div className="font-medium text-gray-800">{item.name}{item.description ? ` - ${item.description}` : ''}</div>
+                  <div className="font-medium text-gray-800">{item.name}</div>
                   <div className="text-gray-500">{item.cartQty} x ₦{parseFloat(item.selling_price).toLocaleString()}</div>
                 </div>
                 <div className="font-bold text-gray-900">
