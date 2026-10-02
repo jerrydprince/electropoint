@@ -53,3 +53,9 @@
     color: hsl(var(--foreground));
   }
 }
+
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+}
