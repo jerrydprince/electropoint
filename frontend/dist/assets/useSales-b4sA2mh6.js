@@ -1,0 +1,1 @@
+import{r as e,w as t}from"./index-CxVMABoi.js";var n=n=>t({queryKey:[`sales-history`,n],queryFn:async()=>(await e.get(`/sales-history`,{params:n})).data.data});export{n as t};
