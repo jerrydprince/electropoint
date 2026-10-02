@@ -186,7 +186,7 @@ export default function POSManager() {
                     )}
                   </div>
                   <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1 truncate">{p.category?.name || 'Uncategorized'}</div>
-                  <div className="text-sm font-bold text-gray-900 leading-tight flex-1 line-clamp-2">{p.name}</div>
+                  <div className="text-sm font-bold text-gray-900 leading-tight flex-1 line-clamp-2">{p.name}{p.description ? ` - ${p.description}` : ''}</div>
                   <div className="flex justify-between items-end mt-auto pt-2 border-t border-gray-50">
                     <div className="text-primary font-black text-sm">₦{parseFloat(p.selling_price).toLocaleString()}</div>
                     <div className="text-[10px] font-bold text-gray-400">{p.quantity} In Stock</div>
@@ -243,7 +243,7 @@ export default function POSManager() {
                 <div key={item.id} className="bg-gray-800 border border-gray-700 rounded-sm p-3 hover:border-gray-600 transition group flex flex-col">
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex-1 pr-2">
-                      <div className="font-bold text-sm text-white line-clamp-1">{item.name}</div>
+                      <div className="font-bold text-sm text-white line-clamp-1">{item.name}{item.description ? ` - ${item.description}` : ''}</div>
                       <div className="text-[10px] text-gray-400 font-mono mt-0.5">{item.sku}</div>
                     </div>
                     <button onClick={() => removeFromCart(item.id)} className="text-gray-500 hover:text-red-400 transition"><Trash2 size={16}/></button>
