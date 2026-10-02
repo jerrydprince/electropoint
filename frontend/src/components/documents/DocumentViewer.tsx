@@ -66,9 +66,15 @@ export default function DocumentViewer({ sale, autoPrint = false }: Props) {
         
         {format === 'thermal' && (
           <div className="flex flex-col gap-4 print:block w-full items-center">
-            {[1, 2].map(copyNum => (
-              <div key={copyNum} className={`bg-white shadow-lg p-6 w-[320px] shrink-0 text-xs font-mono text-black print:shadow-none print:w-[80mm] print:p-0 ${copyNum === 2 ? 'hidden print:block border-t-2 border-dashed border-gray-400 mt-8 pt-8' : ''}`}>
-                {copyNum === 2 && <div className="text-center font-bold mb-4 text-sm tracking-widest">*** MERCHANT COPY ***</div>}
+            {[1, 2, 3, 4].map(copyNum => {
+              let copyTitle = '';
+              if (copyNum === 2) copyTitle = '*** MERCHANT COPY ***';
+              if (copyNum === 3) copyTitle = '*** WAREHOUSE COPY ***';
+              if (copyNum === 4) copyTitle = '*** SECURITY COPY ***';
+              
+              return (
+              <div key={copyNum} className={`bg-white shadow-lg p-6 w-[320px] shrink-0 text-xs font-mono text-black print:shadow-none print:w-[80mm] print:p-0 ${copyNum > 1 ? 'hidden print:block border-t-2 border-dashed border-gray-400 mt-8 pt-8' : ''}`}>
+                {copyNum > 1 && <div className="text-center font-bold mb-4 text-sm tracking-widest">{copyTitle}</div>}
             <div className="text-center mb-4">
               <h2 className="text-lg font-bold uppercase tracking-widest">ELECTROPOINT</h2>
               <p>123 Electronics Avenue</p>
@@ -149,7 +155,8 @@ export default function DocumentViewer({ sale, autoPrint = false }: Props) {
               </div>
             </div>
           </div>
-            ))}
+            );
+            })}
           </div>
         )}
 
