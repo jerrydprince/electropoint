@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - /bin/cp -a frontend/dist/. /home/electrop/public_html/pos.electropointlugbeabuja.com/
-    - /bin/cp -a backend/. /home/electrop/electropoint_backend/
+    - /usr/bin/rsync -a --exclude='public/.htaccess' --exclude='public/index.php' backend/ /home/electrop/electropoint_backend/
